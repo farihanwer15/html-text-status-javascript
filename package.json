@@ -1,0 +1,14 @@
+{
+    "name": "nodejs_test",
+    "description": "Testing Task",
+    "version": "0.0.1",
+    "private": true,
+    "license": "MIT",
+    "author": "Fariha Anwer",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "dependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
