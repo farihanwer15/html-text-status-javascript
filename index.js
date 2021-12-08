@@ -12,15 +12,14 @@ console.log("Server running at http://localhost:%d", port);
 let status = "The shipment is being brought to <a href='https://psf.dhl.com/?countrycode=DE&address=Herne Amalienstr. 1' class='arrowLink' target='_blank'><span class='arrow'></span>Filiale Herne Amalienstr. 1</a> for pick-up. The earliest time when it can be picked up can be found on the notification card."
 console.log("status:",status, ":")
 
-const text = status.replace(/(<([^>]+)>)/gi, "");
-console.log("text:", text, ":")
+//const text = status.replace(/(<([^>]+)>)/gi, "");
 
-const startingHtmlIndex = req.body.status.indexOf('<')
-        let html = null, text = req.body.status
+const startingHtmlIndex = status.indexOf('<')
+        let html = null, text = status
         if (startingHtmlIndex !== -1) {
-            const endingHtmlIndex = req.body.status.lastIndexOf('>')
-            html = req.body.status.substring(startingHtmlIndex, endingHtmlIndex + 1) || null
-            text = req.body.status.substring(0, startingHtmlIndex)
-            text += req.body.status.substring(endingHtmlIndex + 2)
+            const endingHtmlIndex = status.lastIndexOf('>')
+            html = status.substring(startingHtmlIndex, endingHtmlIndex + 1) || null
+            text = status.substring(0, startingHtmlIndex)
+            text += status.substring(endingHtmlIndex + 2)
         }
-console.log(startingHtmlIndex,substring (status,html), ":")
+ console.log("text:", text, ":")
